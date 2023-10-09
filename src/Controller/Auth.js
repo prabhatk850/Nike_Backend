@@ -41,10 +41,10 @@ const userExist= async(req,res)=>{
             email: req.body.email
           });
           if(!emailcheck){
-            res.status(404).send(false)
+            res.send(false)
           }
           else{
-            res.status(200).send(true)
+            res.send(true)
           }
  }
 }
