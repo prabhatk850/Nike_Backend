@@ -1,12 +1,13 @@
 const DropDownModel=require("../Database/DropdownDetails")
 
 const addDropdown= async (req,res)=>{
+
 const DropDown=DropDownModel({
-    data:req.body.data,
-    catagory:req.body.catagory
+    type:req.body.type,
+    category:req.body.category
 })
 
-DropDown.save().then((result)=>{
+¸DropDown.save().then((result)=>{
     res.send(result)
 }).catch((error)=>{
     console.log("error",error)

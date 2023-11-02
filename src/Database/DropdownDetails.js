@@ -1,11 +1,15 @@
 const mongoose=require("mongoose")
 const DropDownSchema=mongoose.Schema({
-    catagory:{
+    category:{
         type:String
     },
-    data:{
+    type:[{
         type:String
-    }
+    }]
+        
+    
+    
+
  })
 
  const DropDownModel=mongoose.model("Dropdown",DropDownSchema)
