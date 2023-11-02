@@ -2,6 +2,8 @@ const express= require("express")
 const app = express()
 const allRoutes=require("./Routes/route")
 require("./Database/connection")
+var cors = require('cors');
+app.use(cors());
 
 const PORT = process.env.PORT || 3001
 
