@@ -7,7 +7,7 @@ const DropDown=DropDownModel({
     category:req.body.category
 })
 
-¸DropDown.save().then((result)=>{
+DropDown.save().then((result)=>{
     res.send(result)
 }).catch((error)=>{
     console.log("error",error)
