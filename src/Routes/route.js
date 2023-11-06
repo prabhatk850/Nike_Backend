@@ -5,6 +5,7 @@ const {addproduct,viewproduct}=require("../Controller/Product")
 const {addsidebar, viewSidebar}=require("../Controller/Sidebar")
 const { addDropdown, ViewDropDown } = require("../Controller/Dropdown")
 const { SignUp, SignIn, userExist } = require("../Controller/Auth")
+const { getUserData } = require("../Controller/UserProfile")
 
 
 router.use(bodyParser.json());
@@ -22,6 +23,8 @@ router.route("/viewDropDown").get(ViewDropDown)
 router.route("/signup").post(SignUp)
 router.route("/signIn").post(SignIn)
 router.route("/checkuser").post(userExist)
+
+router.route("/getUserData").post(getUserData)
 
 
 
