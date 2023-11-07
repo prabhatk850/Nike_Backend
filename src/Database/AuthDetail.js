@@ -17,7 +17,32 @@ const AuthDetailSchema=mongoose.Schema({
     },
     email:{
         type:String
-    }
+    },
+    phoneNumber:{
+        type:String
+    },
+    addressline1:{
+        type:String
+    },
+    addressline2:{
+        type:String
+    },
+    city:{
+        type:String
+    },
+    town:{
+        type:String
+    },
+    state:{
+        type:String
+    },
+    postalcode:{
+        type:String
+    },
+    country:{
+        type:String
+    },
+
 })
 const AuthDetailModel= mongoose.model("Users",AuthDetailSchema)
 module.exports=AuthDetailModel

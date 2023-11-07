@@ -6,6 +6,8 @@ const {addsidebar, viewSidebar}=require("../Controller/Sidebar")
 const { addDropdown, ViewDropDown } = require("../Controller/Dropdown")
 const { SignUp, SignIn, userExist } = require("../Controller/Auth")
 const { getUserData } = require("../Controller/UserProfile")
+const { authTokenCheck } = require("../Middleware/Middleware")
+const { updateProfile } = require("../Controller/UserProfile")
 
 
 router.use(bodyParser.json());
@@ -25,6 +27,8 @@ router.route("/signIn").post(SignIn)
 router.route("/checkuser").post(userExist)
 
 router.route("/getUserData").post(getUserData)
+router.route("/updateProfile").put(authTokenCheck,updateProfile)
+
 
 
 

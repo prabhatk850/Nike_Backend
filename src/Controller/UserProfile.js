@@ -26,5 +26,33 @@ const getUserData = async (req, res) => {
     }
 };
 
+const updateProfile = async(req,res)=>{
+  const Profile ={
+    firstname:req.body.firstname,
+    lastname:req.body.lastname,
+    password:req.body.password,
+    preference:req.body.preference,
+    dob:req.body.dob,
+    email:req.body.email,
+    phoneNumber:req.body.phoneNumber,
+    addressline1:req.body.addressline1,
+    addressline2:req.body.addressline2,
+    city:req.body.city,
+    town:req.body.town,
+    state:req.body.state,
+    postalcode:req.body.postalcode,
+    country:req.body.country
+  }
+  const _id = req.user._id
+  AuthDetailModel.findByIdAndUpdate(_id,Profile,{new:true}).then((result)=>{
+  res.send(result)
+}).catch((err)=>{
+  res.send(err)
+})
+}
 
-module.exports={getUserData}
+
+
+
+
+module.exports={getUserData,updateProfile}
