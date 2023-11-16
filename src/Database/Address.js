@@ -1,15 +1,11 @@
 const mongoose=require("mongoose")
-const AuthDetailSchema=mongoose.Schema({
+const {ObjectId} = mongoose.Schema.Types
+
+const AddressSchema=mongoose.Schema({
     firstname:{
         type:String
     },
     lastname:{
-        type:String
-    },
-    password:{
-        type:String
-    },
-    preference:{
         type:String
     },
     dob:{
@@ -42,11 +38,11 @@ const AuthDetailSchema=mongoose.Schema({
     country:{
         type:String
     },
-    createdAt:{
-        type:Date,
-        default:Date.now()
+    userid:{
+        type:ObjectId,
+        ref:'AuthDetail'
     }
 
 })
-const AuthDetailModel= mongoose.model("Users",AuthDetailSchema)
-module.exports=AuthDetailModel
+const AddressModel= mongoose.model("Address",AddressSchema)
+module.exports=AddressModel

@@ -8,6 +8,7 @@ const { SignUp, SignIn, userExist } = require("../Controller/Auth")
 const { getUserData } = require("../Controller/UserProfile")
 const { authTokenCheck } = require("../Middleware/Middleware")
 const { updateProfile } = require("../Controller/UserProfile")
+const { updateAddress } = require("../Controller/Addre")
 
 
 router.use(bodyParser.json());
@@ -28,6 +29,8 @@ router.route("/checkuser").post(userExist)
 
 router.route("/getUserData").post(getUserData)
 router.route("/updateProfile").put(authTokenCheck,updateProfile)
+
+router.route("/updateAddress").post(authTokenCheck,updateAddress)
 
 
 

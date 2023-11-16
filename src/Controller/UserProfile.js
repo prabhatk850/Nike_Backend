@@ -17,6 +17,7 @@ const getUserData = async (req, res) => {
   
       // Find the user in the database
       const user = await AuthDetailModel.findById(userId);
+      return user
   
       // Return the user information
       res.send(user)
@@ -44,8 +45,8 @@ const updateProfile = async(req,res)=>{
     country:req.body.country
   }
   const _id = req.user._id
-  AuthDetailModel.findByIdAndUpdate(_id,Profile,{new:true}).then((result)=>{
-  res.send(result)
+  AddressModel.findByIdAndUpdate(_id,Profile,{new:true}).then((result)=>{
+  res.update(result)
 }).catch((err)=>{
   res.send(err)
 })
