@@ -21,16 +21,7 @@ const AuthDetailSchema=mongoose.Schema({
     phoneNumber:{
         type:String
     },
-    addressline1:{
-        type:String
-    },
-    addressline2:{
-        type:String
-    },
     city:{
-        type:String
-    },
-    town:{
         type:String
     },
     state:{
@@ -42,10 +33,14 @@ const AuthDetailSchema=mongoose.Schema({
     country:{
         type:String
     },
+    interest:[{
+        type:String
+    }], 
     createdAt:{
         type:Date,
         default:Date.now()
-    }
+    },
+
 
 })
 const AuthDetailModel= mongoose.model("Users",AuthDetailSchema)
