@@ -27,7 +27,7 @@ router.route("/signup").post(SignUp)
 router.route("/signIn").post(SignIn)
 router.route("/checkuser").post(userExist)
 
-router.route("/getUserData").post(getUserData)
+router.route("/getUserData").get(getUserData)
 router.route("/updateProfile").put(authTokenCheck,updateProfile)
 
 router.route("/updateAddress").post(authTokenCheck,updateAddress)
