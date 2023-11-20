@@ -41,6 +41,10 @@ const AddressSchema=mongoose.Schema({
     userid:{
         type:ObjectId,
         ref:'AuthDetail'
+    },
+    default:{
+        type:Boolean,
+        default:false
     }
 
 })

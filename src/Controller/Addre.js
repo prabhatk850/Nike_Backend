@@ -15,7 +15,8 @@ const updateAddress = async(req,res)=>{
     state:req.body.state,
     postalcode:req.body.postalcode,
     country:req.body.country,
-    userid:req.user._id
+    userid:req.user._id,
+    default:req.body.default
   })
   await Address.save().then((result)=>{
   res.send(result)
