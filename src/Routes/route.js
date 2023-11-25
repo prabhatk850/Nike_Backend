@@ -10,6 +10,8 @@ const { authTokenCheck } = require("../Middleware/Middleware")
 const { updateProfile } = require("../Controller/UserProfile")
 const { updateAddress } = require("../Controller/Addre")
 const { getUserAddress } = require("../Controller/UserProfile")
+const { addfavorite } = require("../Controller/fav")
+const { viewfavorite } = require("../Controller/fav")
 
 
 router.use(bodyParser.json());
@@ -33,6 +35,10 @@ router.route("/getUserAddress").get(authTokenCheck,getUserAddress)
 router.route("/updateProfile").put(authTokenCheck,updateProfile)
 
 router.route("/updateAddress").post(authTokenCheck,updateAddress)
+
+// favorite product section
+router.route("/addfav").post(authTokenCheck,addfavorite)
+router.route("/getfav").get(authTokenCheck,viewfavorite)
 
 
 

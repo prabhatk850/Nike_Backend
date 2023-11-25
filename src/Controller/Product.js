@@ -29,6 +29,4 @@ const viewproduct=(req,res)=>{
 } 
 
 
-
-
 module.exports={addproduct,viewproduct}
